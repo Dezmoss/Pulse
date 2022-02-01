@@ -3,6 +3,11 @@
     padding-bottom: 100px
     &__content
         margin-top: 60px
+        display: none
+        justify-content: space-between
+        flex-wrap: wrap
+        &_active
+            display: flex
     &__tabs
         margin-top: 70px
         list-style-type: none
@@ -26,7 +31,7 @@
         transition: 0.5s box-shadow
         div
             transform: skewX(25deg)
-        &:active
+        &_active
             color: #fff
             background-color: $main-color
             border: none
@@ -44,6 +49,7 @@
         border: 2px solid #E8E8E8
         padding: 20px 20px 26px 20px
         overflow: hidden
+        margin-bottom: 20px
         &__img
             max-width: 100%
             max-height: 200px
@@ -70,6 +76,7 @@
             text-align: center
             text-decoration-line: underline
             color: $main-color
+            text-transform: uppercase
             &:hover
                 color: $main-color
         hr
@@ -94,24 +101,48 @@
         &__content
             width: 50%
             margin-right: 0px
+            transition: 0.5s all
             transform: translateX(-100%)
             &_active
                 transform: translateX(0)
                 margin-right: 20px
         &__list
+            position: relative
             width: 50%
             margin-left: 20px
-            transform: translateX(0)
             padding-right: 20px
             transition: 0.5s all
-            padding-left: 0
+            padding-left: 19px
             padding-bottom: 0
             list-style-type: none
+            transform: translateX(0)
             &_active
                 transform: translateX(-100%)
                 margin-left: 0
-        li
-            font-weight: 300
+            li
+                position: relative
+                font-weight: 300
+                font-size: 14px
+                color: #555555
+                margin-bottom: 20px
+                &::before
+                    content: ''
+                    position: absolute
+                    width: 5px
+                    height: 5px
+                    background-color: $main-color
+                    left: -14px
+                    top: 7px
+        &__back
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(calc(-50% - 19px))
+            display: block
+            color: $main-color
             font-size: 14px
-            color: #555555
-            margin-bottom: 20px
+            font-weight: 500
+            text-decoration: underline
+            text-transform: uppercase
+            &:hover
+                color: $main-color
