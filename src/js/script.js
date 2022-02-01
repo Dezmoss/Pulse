@@ -17,12 +17,14 @@ $(document).ready(function () {
         ]
     });
 
+    //TABs
     $('ul.catalog__tabs').on('click', 'li:not(catalog__tab_active)', function () {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
             .closest('.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
 
+    //Iforamtion sliders in catalog
     function toggleSlide(item) {
         $(item).each(function (i) {
             $(this).on('click', function (e) {
@@ -52,5 +54,38 @@ $(document).ready(function () {
         });
     });
 
+    //Validation
+    function valideForm(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите свое имя",
+                    minlength: jQuery.validator.format("Необходимо ввести как минимум {0} символа!")
+                },
+                phone: "Введите номер телефона",
+                email: {
+                    required: "Нам необходим ваш email для связи с вами",
+                    email: "Ваш email должен быть в формате: name@domain.com"
+                }
+            }
+        });
+    }
+
+    valideForm('#order .feed-form');
+    valideForm('#consultate .feed-form');
+    valideForm('#consultation .feed-form');
+
 });
+
 
