@@ -87,10 +87,10 @@ $(document).ready(function () {
     valideForm('#consultation .feed-form');
 
     //Phone mask
-    /*     $('input[name=phone]').mask("+7 (999) 999-99-99")
-    
-        //Send mail from forms
-        $('form').submit(function (e) {
+    $('input[name=phone]').mask("+7 (999) 999-99-99")
+
+    //Send mail from forms
+    /*     $('form').submit(function (e) {
             e.preventDefault();
     
             if (!$(this).valid()) {
@@ -109,6 +109,15 @@ $(document).ready(function () {
             });
             return false;
         }); */
+
+    //Smooth scroll
+    /*     $(window).scroll(function () {
+            if ($(this).srollTop() > 1600) {
+                $('.pageup').fadeOut();
+            } else {
+                $('.pageup').fadeIn();
+            }
+        }) */
 });
 
 
