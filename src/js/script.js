@@ -31,8 +31,8 @@ $(document).ready(function () {
                 e.preventDefault();
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
                 $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-            })
-        })
+            });
+        });
     }
 
     toggleSlide('.catalog-item__content');
@@ -87,7 +87,7 @@ $(document).ready(function () {
     valideForm('#consultation .feed-form');
 
     //Phone mask
-    $('input[name=phone]').mask("+7 (999) 999-99-99")
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 
     //Send mail from forms
     /*     $('form').submit(function (e) {
